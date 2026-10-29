@@ -48,7 +48,7 @@ chmod +x install.sh
 
 ## Обои
 
-Скрипт `set-wallpaper.fish` ставит случайные обои из папки `~/wallpapers/`.
+Скрипт `set-wallpaper.fish` ставит случайные обои из директории `~/wallpapers/`.
 Запускается через `Super + A`.
 
 ---
