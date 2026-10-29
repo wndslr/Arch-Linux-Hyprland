@@ -10,28 +10,25 @@
 | Lock Screen | [Hyprlock](https://github.com/hyprwm/hyprlock) |
 | Wallpaper | [awww](https://codeberg.org/LGFae/awww) |
 | Shell | [Fish](https://fishshell.com/) |
-| Display Manager | [SDDM](https://github.com/sddm/sddm) + [sddm-astronaut-theme](https://github.com/keyitdev/sddm-astronaut-theme) |
+| Notifications | [swaync](https://github.com/ErikReider/SwayNotificationCenter) |
+| File Manager | [Thunar](https://docs.xfce.org/xfce/thunar/start) |
+| Display Manager | [SDDM](https://github.com/sddm/sddm) + [where-is-my-sddm-theme](https://github.com/stepanzubkov/where-is-my-sddm-theme) |
 
 ---
-
-## Установка
-
+## Установка программ
+### Установка yay
 ```bash
-git clone https://github.com/wndslr/wndArch.git ~/wndArch
-cd ~/wndArch/
-# Рекомендую проверить скрипт перед запуском, хорошая практика
-chmod +x install.sh
-./install.sh
+sudo pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -Si
 ```
-
-### Зависимости
-
+### Программы
+```bash
+yay -S zen-browser-bin hyprshot clipse brightnessctl cpupower timeshift telegram-desktop thunar udiskie swaync playerctl
+```
 ```bash
 yay -S hyprland waybar kitty neovim wofi hyprlock hyprpaper awww fish
-```
-### Программы под хоткеи
-```bash
-yay -S zen-browser-bin hyprshot clipse brightnessctl cpupower timeshift telegram-desktop
 ```
 Если ASUS
 ```bash
@@ -39,14 +36,35 @@ yay -S asusctl
 ```
 ---
 
-## Обои
+## Установка конфигов
 
-Скрипт `set-wallpaper.fish` ставит случайные обои из папки `~/wallpapers/`.
+```bash
+git clone https://github.com/wndslr/Arch-Linux-Hyprland.git ~/Arch-Linux-Hyprland
+cd ~/Arch-Linux-Hyprland/
+# Рекомендую проверить скрипт перед запуском, хорошая практика
+chmod +x install.sh
+./install.sh
+```
+## SDDM тема
 
-```fish
-set wallpaper_dir $HOME/wallpapers/
+Установка:
+```bash
+git clone https://github.com/stepanzubkov/where-is-my-sddm-theme.git
+cd where-is-my-sddm-theme
+chmod +x install.sh
+sudo ./install.sh
+```
+Установка моей темы
+```bash
+cd ~/Arch-Linux-Hyprland/.sddm
+cp theme.conf /usr/share/sddm/themes/where_is_my_sddm_theme_qt5/theme.conf
 ```
 
+---
+
+## Обои
+
+Скрипт `set-wallpaper.fish` ставит случайные обои из директории `~/wallpapers/`.
 Запускается через `Super + A`.
 
 ---
@@ -118,7 +136,7 @@ set wallpaper_dir $HOME/wallpapers/
 и требуют `asusctl` + `brightnessctl`:
 
 - `Super + F6/F7` — подсветка клавиатуры
-- `Super + F8/F9` — включить/выключить тачпад
+- `Super + F8/F9` — включить/выключить тачпад (F9 ставит чувствительность 0, F8 -0.8)
 - Fish функции `bat60` / `bat100` — лимит заряда батареи
 - Fish функции `offtouch` / `ontouch` — тачпад (device id надо поменять на свой)
 
