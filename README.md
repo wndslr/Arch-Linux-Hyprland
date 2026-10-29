@@ -13,7 +13,7 @@
 | Display Manager | [SDDM](https://github.com/sddm/sddm) + [sddm-astronaut-theme](https://github.com/keyitdev/sddm-astronaut-theme) |
 
 ---
-# Установка программ
+## Установка программ
 ### Установка yay при отсутствии
 ```bash
 sudo pacman -S --needed git base-devel
