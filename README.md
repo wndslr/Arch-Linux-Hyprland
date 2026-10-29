@@ -10,6 +10,8 @@
 | Lock Screen | [Hyprlock](https://github.com/hyprwm/hyprlock) |
 | Wallpaper | [awww](https://codeberg.org/LGFae/awww) |
 | Shell | [Fish](https://fishshell.com/) |
+| Notifications | [swaync](https://github.com/ErikReider/SwayNotificationCenter) |
+| File Manager | [Thunar](https://docs.xfce.org/xfce/thunar/start) |
 | Display Manager | [SDDM](https://github.com/sddm/sddm) + [sddm-astronaut-theme](https://github.com/keyitdev/sddm-astronaut-theme) |
 
 ---
@@ -23,7 +25,7 @@ makepkg -Si
 ```
 ### Программы
 ```bash
-yay -S zen-browser-bin hyprshot clipse brightnessctl cpupower timeshift telegram-desktop
+yay -S zen-browser-bin hyprshot clipse brightnessctl cpupower timeshift telegram-desktop thunar udiskie swaync playerctl
 ```
 ```bash
 yay -S hyprland waybar kitty neovim wofi hyprlock hyprpaper awww fish
