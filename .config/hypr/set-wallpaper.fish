@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-set wallpaper_dir /home/wnd/blackwallpaper/
+set wallpaper_dir $HOME/wallpapers
 
 # Получаем список файлов в переменную
 set wallpapers (find $wallpaper_dir -type f \( -iname "*.jpg" -o -iname "*.png" \) | sort)
