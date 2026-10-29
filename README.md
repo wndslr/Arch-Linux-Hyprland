@@ -12,7 +12,7 @@
 | Shell | [Fish](https://fishshell.com/) |
 | Notifications | [swaync](https://github.com/ErikReider/SwayNotificationCenter) |
 | File Manager | [Thunar](https://docs.xfce.org/xfce/thunar/start) |
-| Display Manager | [SDDM](https://github.com/sddm/sddm) + [sddm-astronaut-theme](https://github.com/keyitdev/sddm-astronaut-theme) |
+| Display Manager | [SDDM](https://github.com/sddm/sddm) + [where-is-my-sddm-theme](https://github.com/stepanzubkov/where-is-my-sddm-theme) |
 
 ---
 ## Установка программ
@@ -44,6 +44,20 @@ cd ~/Arch-Linux-Hyprland/
 # Рекомендую проверить скрипт перед запуском, хорошая практика
 chmod +x install.sh
 ./install.sh
+```
+## SDDM тема
+
+Установка:
+```bash
+git clone https://github.com/stepanzubkov/where-is-my-sddm-theme.git
+cd where-is-my-sddm-theme
+chmod +x install.sh
+sudo ./install.sh
+```
+Установка моей темы
+```bash
+cd ~/Arch-Linux-Hyprland/sddm
+cp theme.conf /usr/share/sddm/themes/where_is_my_sddm_theme_qt5/theme.conf
 ```
 
 ---
