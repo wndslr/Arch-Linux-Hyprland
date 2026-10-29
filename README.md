@@ -21,14 +21,13 @@ sudo pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -Si
-
-```bash
-yay -S hyprland waybar kitty neovim wofi hyprlock hyprpaper awww fish
 ```
-
-### Программы под хоткеи
+### Программы
 ```bash
 yay -S zen-browser-bin hyprshot clipse brightnessctl cpupower timeshift telegram-desktop
+```
+```bash
+yay -S hyprland waybar kitty neovim wofi hyprlock hyprpaper awww fish
 ```
 Если ASUS
 ```bash
