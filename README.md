@@ -56,7 +56,7 @@ sudo ./install.sh
 ```
 Установка моей темы
 ```bash
-cd ~/Arch-Linux-Hyprland/sddm
+cd ~/Arch-Linux-Hyprland/.sddm
 cp theme.conf /usr/share/sddm/themes/where_is_my_sddm_theme_qt5/theme.conf
 ```
 
