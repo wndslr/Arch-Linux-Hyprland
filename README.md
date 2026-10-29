@@ -13,8 +13,30 @@
 | Display Manager | [SDDM](https://github.com/sddm/sddm) + [sddm-astronaut-theme](https://github.com/keyitdev/sddm-astronaut-theme) |
 
 ---
+### Зависимости
 
-## Установка
+## Установка yay при отсутствии
+```bash
+sudo pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -Si
+
+```bash
+yay -S hyprland waybar kitty neovim wofi hyprlock hyprpaper awww fish
+```
+
+### Программы под хоткеи
+```bash
+yay -S zen-browser-bin hyprshot clipse brightnessctl cpupower timeshift telegram-desktop
+```
+Если ASUS
+```bash
+yay -S asusctl
+```
+---
+
+## Установка конфигов
 
 ```bash
 git clone https://github.com/wndslr/Arch-Linux-Hyprland.git ~/Arch-Linux-Hyprland
@@ -24,19 +46,6 @@ chmod +x install.sh
 ./install.sh
 ```
 
-### Зависимости
-
-```bash
-yay -S hyprland waybar kitty neovim wofi hyprlock hyprpaper awww fish
-```
-### Программы под хоткеи
-```bash
-yay -S zen-browser-bin hyprshot clipse brightnessctl cpupower timeshift telegram-desktop
-```
-Если ASUS
-```bash
-yay -S asusctl
-```
 ---
 
 ## Обои
