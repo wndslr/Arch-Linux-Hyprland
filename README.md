@@ -13,9 +13,8 @@
 | Display Manager | [SDDM](https://github.com/sddm/sddm) + [sddm-astronaut-theme](https://github.com/keyitdev/sddm-astronaut-theme) |
 
 ---
-### Зависимости
-
-## Установка yay при отсутствии
+# Установка программ
+### Установка yay при отсутствии
 ```bash
 sudo pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
