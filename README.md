@@ -17,8 +17,8 @@
 ## Установка
 
 ```bash
-git clone https://github.com/wndslr/wndArch.git ~/wndArch
-cd ~/wndArch/
+git clone https://github.com/wndslr/Arch-Linux-Hyprland.git ~/Arch-Linux-Hyprland
+cd ~/Arch-Linux-Hyprland/
 # Рекомендую проверить скрипт перед запуском, хорошая практика
 chmod +x install.sh
 ./install.sh
