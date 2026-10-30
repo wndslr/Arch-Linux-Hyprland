@@ -1,7 +1,7 @@
-## Компоненты
+## Components
 
-| Роль | Программа |
-|------|-----------|
+| Role | Program |
+|------|---------|
 | Window Manager | [Hyprland](https://hyprland.org/) |
 | Status Bar | [Waybar](https://github.com/Alexays/Waybar) |
 | Terminal | [Kitty](https://sw.kovidgoyal.net/kitty/) |
@@ -15,46 +15,46 @@
 | Display Manager | [SDDM](https://github.com/sddm/sddm) + [where-is-my-sddm-theme](https://github.com/stepanzubkov/where-is-my-sddm-theme) |
 
 ---
-## Установка программ
-### Установка yay
+## Installing packages
+### Install yay
 ```bash
 sudo pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -Si
 ```
-### Программы
+### Programs
 ```bash
 yay -S zen-browser-bin hyprshot clipse brightnessctl cpupower timeshift telegram-desktop thunar udiskie swaync playerctl
 ```
 ```bash
 yay -S hyprland waybar kitty neovim wofi hyprlock hyprpaper awww fish
 ```
-Если ASUS
+If you're on ASUS
 ```bash
 yay -S asusctl
 ```
 ---
 
-## Установка конфигов
+## Installing configs
 
 ```bash
 git clone https://github.com/wndslr/Arch-Linux-Hyprland.git ~/Arch-Linux-Hyprland
 cd ~/Arch-Linux-Hyprland/
-# Рекомендую проверить скрипт перед запуском, хорошая практика
+# I recommend reviewing the script before running it it's a good practice
 chmod +x install.sh
 ./install.sh
 ```
-## SDDM тема
+## SDDM theme
 
-Установка:
+Install the theme:
 ```bash
 git clone https://github.com/stepanzubkov/where-is-my-sddm-theme.git
 cd where-is-my-sddm-theme
 chmod +x install.sh
 sudo ./install.sh
 ```
-Установка моей темы
+Apply my config:
 ```bash
 cd ~/Arch-Linux-Hyprland/.sddm
 cp theme.conf /usr/share/sddm/themes/where_is_my_sddm_theme_qt5/theme.conf
@@ -62,110 +62,109 @@ cp theme.conf /usr/share/sddm/themes/where_is_my_sddm_theme_qt5/theme.conf
 
 ---
 
-## Обои
+## Wallpaper
 
-Скрипт `set-wallpaper.fish` ставит случайные обои из директории `~/wallpapers/`.
-Запускается через `Super + A`.
+The `set-wallpaper.fish` script picks a random wallpaper from the `~/wallpapers/` directory.
+Triggered with `Super + A`.
 
 ---
 
-## Хоткеи
+## Keybinds
 
 > `$mainMod` = **Super (Win)**
 
-### Приложения
+### Apps
 
-| Хоткей | Действие |
-|--------|----------|
-| `Super + Q` | Открыть терминал |
-| `Super + E` | Файловый менеджер |
+| Keybind | Action |
+|---------|--------|
+| `Super + Q` | Open terminal |
+| `Super + E` | File manager |
 | `Super + R` | Launcher (wofi) |
-| `Super + B` | Браузер (zen-browser) |
+| `Super + B` | Browser (zen-browser) |
 | `Super + T` | Telegram |
-| `Super + V` | Буфер обмена (clipse) |
-| `Super + A` | Случайные обои |
+| `Super + V` | Clipboard (clipse) |
+| `Super + A` | Random wallpaper |
 
-### Система
+### System
 
-| Хоткей | Действие |
-|--------|----------|
-| `Super + W` | Закрыть окно |
-| `Super + L` | Заблокировать экран |
-| `Super + D` | Показать/скрыть Waybar |
-| `Super + M` | Выйти из Hyprland |
+| Keybind | Action |
+|---------|--------|
+| `Super + W` | Close window |
+| `Super + L` | Lock screen |
+| `Super + D` | Toggle Waybar |
+| `Super + M` | Exit Hyprland |
 
-### Скриншоты (hyprshot)
+### Screenshots (hyprshot)
 
-| Хоткей | Действие |
-|--------|----------|
-| `Print` | Скриншот выделенной области |
-| `Super + F12` | Скриншот всего экрана |
+| Keybind | Action |
+|---------|--------|
+| `Print` | Screenshot selected area |
+| `Super + F12` | Screenshot full screen |
 
-### Звук
+### Audio
 
-| Хоткей | Действие |
-|--------|----------|
+| Keybind | Action |
+|---------|--------|
 | `Super + F1` | Mute |
-| `Super + F2` | Громкость −10% |
-| `Super + F3` | Громкость +10% |
+| `Super + F2` | Volume −10% |
+| `Super + F3` | Volume +10% |
 
-### Яркость экрана
+### Screen brightness
 
-| Хоткей | Действие |
-|--------|----------|
-| `Super + F4` | Яркость мин. |
-| `Super + F5` | Яркость макс. |
+| Keybind | Action |
+|---------|--------|
+| `Super + F4` | Brightness low |
+| `Super + F5` | Brightness high |
 
-### Навигация
+### Navigation
 
-| Хоткей | Действие |
-|--------|----------|
-| `Super + ←↑↓→` | Фокус на окно |
-| `Super + 1–0` | Переключить workspace |
-| `Super + Shift + 1–0` | Переместить окно в workspace |
+| Keybind | Action |
+|---------|--------|
+| `Super + ←↑↓→` | Focus window |
+| `Super + 1–0` | Switch workspace |
+| `Super + Shift + 1–0` | Move window to workspace |
 | `Super + S` | Special workspace |
-| `Super + Shift + S` | Переместить в special workspace |
-| `Super + ЛКМ` | Перетащить окно |
-| `Super + ПКМ` | Изменить размер окна |
+| `Super + Shift + S` | Move to special workspace |
+| `Super + LMB` | Drag window |
+| `Super + RMB` | Resize window |
 
 ---
 
-## Специфично для ASUS, тестил на vivobook pro 15 с AMD Ryzen 7 5800H
+## ASUS-specific, tested on a Vivobook Pro 15 with AMD Ryzen 7 5800H
 
-Хоткеи и функции работают только на ноутбуках ASUS,
-и требуют `asusctl` + `brightnessctl`:
+The following keybinds and functions only work on ASUS laptops
+and require `asusctl` + `brightnessctl`:
 
-- `Super + F6/F7` — подсветка клавиатуры
-- `Super + F8/F9` — включить/выключить тачпад (F9 ставит чувствительность 0, F8 -0.8)
-- Fish функции `bat60` / `bat100` — лимит заряда батареи
-- Fish функции `offtouch` / `ontouch` — тачпад (device id надо поменять на свой)
+- `Super + F6/F7` — keyboard backlight
+- `Super + F8/F9` — disable/enable touchpad (F9 sets sensitivity to 0, F8 to -0.8)
+- Fish functions `bat60` / `bat100` battery charge limit
+- Fish functions `offtouch` / `ontouch` touchpad (you'll need to swap in your own device id)
 
-Посмотреть свой device id тачпада:
+Find your touchpad device id:
 ```bash
 hyprctl devices | grep -i touchpad
 ```
 
 ---
 
-## Fish команды
+## Fish functions
 
-| Функция | Действие |
-|---------|----------|
+| Function | Action |
+|----------|--------|
 | `update` | `yay -Syu` |
-| `performance` | Режим производительности CPU |
-| `powersave` | Режим экономии CPU |
-| `archScreen` | Создать снапшот Timeshift |
-| `mousemode` | Чувствительность мыши −0.8 |
-| `touchpadmode` | Чувствительность тачпада 0 |
+| `performance` | CPU performance mode |
+| `powersave` | CPU power-saving mode |
+| `archScreen` | Create a Timeshift snapshot |
+| `mousemode` | Mouse sensitivity −0.8 |
+| `touchpadmode` | Touchpad sensitivity 0 |
 
-Тут нужно подгнать чувствительность под себя диапазон от -1 до 1,
+You'll want to tune the sensitivity for yourself (it ranges from -1 to 1).
 
-Скрипты находятся в конфиге fish.
+The scripts live in the fish config.
 ```bash
 ~/.config/fish/config.fish
 ```
 
-По желанию можно прописать в конфиг при запуске терминала вывод fastfetch со спеками системы, но как по мне это только занимает полезное пространство, особенно на небольшом экране ноутбука.
+If you want, you can add fastfetch output to your terminal on startup, but personally I think it just eats up useful space, especially on a small laptop screen.
 ```bash
 sudo pacman -S fastfetch
-```
