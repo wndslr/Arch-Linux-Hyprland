@@ -22,12 +22,13 @@ function touchpadmode
     hyprctl eval 'hl.config({ input = { sensitivity = 0 } })'
 end
 
+# Узнать свой ID: hyprctl devices | grep -i touchpad
 function offtouch
-    hyprctl eval 'hl.device({ name="asue120b:00-04f3:31c0-touchpad", enabled=false })'
+    hyprctl eval 'hl.device({ name="Свой ID тачпада", enabled=false })'
 end
 
 function ontouch
-    hyprctl eval 'hl.device({ name="asue120b:00-04f3:31c0-touchpad", enabled=true })'
+    hyprctl eval 'hl.device({ name="Свой ID тачпада", enabled=true })'
 end
 
 function bat60

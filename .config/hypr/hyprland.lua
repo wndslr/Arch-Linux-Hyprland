@@ -1,5 +1,9 @@
 -- MONITORS
 
+-- NOTE: This profile is specific to my laptop screen.
+-- On different hardware, the output/mode settings will likely be different. To find out what yours are:
+-- hyprctl monitors
+
 hl.monitor({
 	output = "eDP-1",
 	mode = "1920x1080@144",
@@ -25,7 +29,6 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("brightnessctl set 64000")
 	hl.exec_cmd("thunar --daemon")
 	hl.exec_cmd("env GDK_SCALE=2 GDK_DPI_SCALE=0.5 waybar & udiskie & awww-daemon")
-	hl.exec_cmd("hiddify")
 	hl.exec_cmd("swaync")
 	hl.exec_cmd("clipse -listen")
 	hl.exec_cmd("/usr/lib/xdg-desktop-portal-gtk")
@@ -206,7 +209,7 @@ hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
 
 -- Workspaces
 for i = 1, 10 do
-	local key = i % 10 -- 10 → 0
+	local key = i % 10
 	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
 	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
@@ -230,7 +233,7 @@ hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURC
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl s 10%+"), { repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl s 10%-"), { repeating = true })
 
--- Mediaplayes (Usless shi)
+-- Media keys
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })

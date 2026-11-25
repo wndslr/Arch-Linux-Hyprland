@@ -44,6 +44,8 @@ cd ~/Arch-Linux-Hyprland/
 # I recommend reviewing the script before running it it's a good practice
 chmod +x install.sh
 ./install.sh
+# Existing ~/.config/<app> dirs are backed up automatically as
+# ~/.config/<app>.bak.<timestamp> before being overwritten.
 ```
 ## SDDM theme
 

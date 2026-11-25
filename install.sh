@@ -15,7 +15,13 @@ configs=(
 
 for cfg in "${configs[@]}"; do
   src="$DOTFILES_DIR/.config/$cfg"
+  dst="$CONFIG_DIR/$cfg"
   if [ -d "$src" ]; then
+    if [ -d "$dst" ]; then
+      backup="${dst}.bak.$(date +%Y%m%d%H%M%S)"
+      echo -e "Existing ~/.config/$cfg found, backing up to $backup"
+      mv "$dst" "$backup"
+    fi
     echo -e "Copying $cfg..."
     cp -r "$src" "$CONFIG_DIR/"
   else
@@ -33,4 +39,6 @@ fi
 
 echo ""
 echo "Done!"
+echo "Note: the SDDM theme (.sddm/theme.conf) is NOT installed by this script."
+echo "See README.md for the manual SDDM setup steps."
 echo ""

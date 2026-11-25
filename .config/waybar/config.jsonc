@@ -35,9 +35,10 @@
         "hyprland/workspaces"
     ],
 
-    // Modules Right    
+    // Modules Right
+    // (custom/updates и custom/ml4w-welcome убраны: это были модули из
+    // исходного шаблона ML4W, в modules.json они не определены)
     "modules-right": [
-        "custom/updates",
         "pulseaudio",
         "bluetooth",
         "battery", 
@@ -47,7 +48,6 @@
         "idle_inhibitor",
         "tray",
         "custom/exit",
-        "custom/ml4w-welcome",
         "clock"
     ]
 }
