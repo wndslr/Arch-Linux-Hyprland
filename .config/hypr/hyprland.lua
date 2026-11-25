@@ -133,7 +133,7 @@ hl.config({
 	},
 })
 
--- Отключение тачпада при запуске
+-- Touchpad OFF default
 hl.device({
 	name = "Свой ID тачпада",
 	enabled = false,
