@@ -7,12 +7,11 @@ hl.monitor({
 	scale = 1,
 })
 
--- PROGRAMS VARS
+-- MY PROGRAMS
 
 local terminal = "kitty"
 local fileManager = "thunar"
 local menu = "wofi --show drun"
-local browser = "zen-browser"
 local mainMod = "SUPER"
 
 -- ENVIRONMENT VARIABLES
@@ -73,7 +72,7 @@ hl.config({
 			vibrancy = 0.1696,
 		},
 	},
-
+	-- Set true if u need it, I think it's not necessary
 	animations = {
 		enabled = false,
 	},
@@ -136,7 +135,7 @@ hl.config({
 
 -- Отключение тачпада при запуске
 hl.device({
-	name = "asue120b:00-04f3:31c0-touchpad",
+	name = "Свой ID тачпада",
 	enabled = false,
 })
 
@@ -161,69 +160,69 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("zen-browser"))
 -- Clipse
 hl.bind("SUPER + V", hl.dsp.exec_cmd("kitty --class clipse -e clipse"))
 
--- hyprshot
-hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m region -o /home/wnd/screenshots --clipboard-only"))
-hl.bind(mainMod .. " + F12", hl.dsp.exec_cmd("hyprshot -m output -o /home/wnd/screenshots --clipboard-only"))
+-- Hyprshot
+hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
+hl.bind(mainMod .. " + F12", hl.dsp.exec_cmd("hyprshot -m output --clipboard-only"))
 
--- kdblight
-hl.bind(mainMod .. " + F7", hl.dsp.exec_cmd("brightnessctl --device='asus::kbd_backlight' set 100%"))
-hl.bind(mainMod .. " + F6", hl.dsp.exec_cmd("brightnessctl --device='asus::kbd_backlight' set 0%"))
+-- Keyboard brightness
+hl.bind(mainMod .. " + F7", hl.dsp.exec_cmd("brightnessctl --device='название подсветки' set 100%"))
+hl.bind(mainMod .. " + F6", hl.dsp.exec_cmd("brightnessctl --device='название подсветки' set 0%"))
 
--- brightness
+-- Brightness
 hl.bind(mainMod .. " + F5", hl.dsp.exec_cmd("brightnessctl set 64500"))
 hl.bind(mainMod .. " + F4", hl.dsp.exec_cmd("brightnessctl set 10000"))
 
 -- Waybar toggle
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("pkill -SIGUSR1 waybar"))
 
--- Громкость (через mainMod + Fx)
+-- Volumes
 hl.bind(mainMod .. " + F3", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+"))
 hl.bind(mainMod .. " + F2", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-"))
 hl.bind(mainMod .. " + F1", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0%"))
 
--- Смена обоев
+-- Wallpaper change
 hl.bind("SUPER + A", hl.dsp.exec_cmd("fish -c '~/.config/hypr/set-wallpaper.fish'"))
 
--- Тачпад вкл/выкл + переключение чувствительности (mousemode/touchpadmode)
-
--- F8: выкл тачпад
+-- Touchpad OFF
 hl.bind(
 	"SUPER + F8",
 	hl.dsp.exec_cmd(
-		"fish -c \"hyprctl eval 'hl.device({ name=\\\"asue120b:00-04f3:31c0-touchpad\\\", enabled=false })'; and hyprctl eval 'hl.config({ input = { sensitivity = -0.8 } })'\""
+		"fish -c \"hyprctl eval 'hl.device({ name=\\\"Свой ID тачпада\\\", enabled=false })'; and hyprctl eval 'hl.config({ input = { sensitivity = -0.8 } })'\""
 	)
 )
--- F9: вкл тачпад
+-- Touchpad ON
 hl.bind(
 	"SUPER + F9",
 	hl.dsp.exec_cmd(
-		"fish -c \"hyprctl eval 'hl.device({ name=\\\"asue120b:00-04f3:31c0-touchpad\\\", enabled=true })'; and hyprctl eval 'hl.config({ input = { sensitivity = 0 } })'\""
+		"fish -c \"hyprctl eval 'hl.device({ name=\\\"Свой ID тачпада\\\", enabled=true })'; and hyprctl eval 'hl.config({ input = { sensitivity = 0 } })'\""
 	)
 )
 
--- Перемещение фокуса стрелками
+-- Focus by arrows
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
 
--- Переключение воркспейсов
+-- Workspaces
 for i = 1, 10 do
-	local key = i % 10
+	local key = i % 10 -- 10 → 0
 	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
 	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
+-- Workspace S
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
+-- Workspaces scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
--- Мультимедийные клавиши ноутбука
+-- Volumes 2
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { repeating = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { repeating = true })
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { repeating = true })
@@ -231,6 +230,7 @@ hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURC
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl s 10%+"), { repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl s 10%-"), { repeating = true })
 
+-- Mediaplayes (Usless shi)
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
@@ -238,13 +238,13 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 
 -- WINDOWS AND WORKSPACES
 
--- Fullscreen для zen-browser
+-- Fullscreen zen-browser
 hl.window_rule({
 	match = { class = "^(zen)$" },
 	fullscreen = true,
 })
 
--- Fullscreen для Teleagram
+-- Fullscreen Telegram
 hl.window_rule({
 	match = { class = "^(org.telegram.desktop)$" },
 	fullscreen = true,
@@ -257,13 +257,8 @@ hl.window_rule({
 	size = { 622, 652 },
 })
 
+-- Ban maximize requests
 hl.window_rule({
 	match = { class = ".*" },
 	suppress_event = "maximize",
 })
-
--- Fix XWayland drag issues (If there a problem remove this comment section)
--- hl.window_rule({
---     match = { class = "^$", title = "^$", xwayland = true, float = true, fullscreen = false, pin = false },
---     no_focus = true,
--- })

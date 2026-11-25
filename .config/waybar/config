@@ -62,15 +62,15 @@
         "warning": 30,
         "critical": 15
       },
-      "format": "{icon}  {capacity}%",
-      "format-full": "{icon}  {capacity}%",
-      "format-charging": "  {capacity}%",
-      "format-plugged": "  {capacity}%",
+      "format": "{icon} {capacity}%",
+      "format-full": "{icon} {capacity}%",
+      "format-charging": " {capacity}%",
+      "format-plugged": " {capacity}%",
       "format-alt": "{time} {icon}",
       "format-icons": ["", "", "", "", ""]
     },
     "network": {
-      "format-wifi": "  {signalStrength}%",
+      "format-wifi": " {signalStrength}%",
       "format-ethernet": "{cidr} ",
       "tooltip-format": "{ifname} via {gwaddr} ",
       "format-linked": "{ifname} (No IP) ",
@@ -78,7 +78,7 @@
       "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
-      "format": " {icon}  {volume}%",
+      "format": "{volume}%",
       "format-bluetooth": " {volume}% ",
       "format-bluetooth-muted": "  {icon} {format_source}",
       "format-muted": "  {format_source}",

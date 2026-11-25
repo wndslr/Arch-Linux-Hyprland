@@ -1,5 +1,5 @@
 window {
-  background-color: #1a1b26;
+  background-color: #2e2e2e;
 }
 
 * {
@@ -12,8 +12,8 @@ window {
 }
 
 #input {
-  background-color: #1a1b26;
-  color: #c0caf5;
+  background-color: ##D3D3D3;
+  color: #ffffff;
   outline: none;
   box-shadow: none;
   border: 0;
@@ -36,11 +36,11 @@ window {
 }
 
 #entry:selected {
-  background-color: #c0caf5;
+  background-color: #D3D3D3;
   outline: none;
 }
 
 #text:selected {
-  color: #1a1b26;
+  color: #111111;
 }
 
