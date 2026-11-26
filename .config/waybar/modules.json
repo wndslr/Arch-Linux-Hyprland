@@ -64,12 +64,11 @@
     },
     
     // Cliphist
-    // Clipboard (clipse) — тот же клиент, что и в hyprland.lua (SUPER + V).
-    // Было: вызов ~/dotfiles/scripts/cliphist.sh, которого нет в этом репо
-    // (и cliphist — не тот инструмент, что используется здесь, тут clipse).
     "custom/cliphist": {
         "format": "",
-        "on-click": "sleep 0.1 && kitty --class clipse -e clipse",
+        "on-click": "sleep 0.1 && ~/dotfiles/scripts/cliphist.sh",
+        "on-click-right": "sleep 0.1 && ~/dotfiles/scripts/cliphist.sh d",
+        "on-click-middle": "sleep 0.1 && ~/dotfiles/scripts/cliphist.sh w",
         "tooltip": false
     },
 
@@ -93,7 +92,7 @@
         "format": "Apps",
         // END APPS LABEL
         "on-click": "sleep 0.2;wofi -show drun -replace",
-        // on-click-right вел на ~/dotfiles/hypr/scripts/keybindings.sh, которого нет в этом репо — убрано
+        "on-click-right": "~/dotfiles/hypr/scripts/keybindings.sh",
         "tooltip": false
     },
 
@@ -101,7 +100,7 @@
     "custom/appmenuicon": {
         "format": "",
         "on-click": "wofi -show drun -replace",
-        // on-click-right вел на несуществующий скрипт, убрано
+        "on-click-right": "~/dotfiles/hypr/scripts/keybindings.sh",
         "tooltip": false
     },    
 
